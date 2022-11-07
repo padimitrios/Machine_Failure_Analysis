@@ -24,7 +24,7 @@ y = np.asarray(y,dtype="bool,i4")
 random_state = 20
 
 X_train, X_test, y_train, y_test = train_test_split(
-    Xt[:3000], y[:3000], test_size=0.25, random_state=random_state)
+    Xt, y, test_size=0.25, random_state=random_state)
 
 rsf = RandomSurvivalForest(n_estimators=1000,
                            min_samples_split=10,
