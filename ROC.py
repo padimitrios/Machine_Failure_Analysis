@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from yellowbrick.classifier import ROCAUC
 from yellowbrick.datasets import load_spam
 
-Xt = pd.read_csv("C:/Users/Dimitris/Desktop/data_2.csv")
+Xt = pd.read_csv("data.csv")
 y = Xt['Machine failure']
 
 Xt = Xt.drop(['UDI','Product ID','Machine failure','Tool wear [min]','TWF','HDF','PWF','OSF','RNF'], axis=1)

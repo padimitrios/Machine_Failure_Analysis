@@ -4,7 +4,7 @@ from yellowbrick.features.radviz import radviz
 
 
 
-Xt = pd.read_csv("C:/Users/Dimitris/Desktop/data_2.csv")
+Xt = pd.read_csv("data.csv")
 y = Xt['Machine failure']
 
 Xt = Xt.drop(['UDI','Product ID','Machine failure','Tool wear [min]','TWF','HDF','PWF','OSF','RNF'], axis=1)

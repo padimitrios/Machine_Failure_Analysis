@@ -7,7 +7,7 @@ from lifelines.statistics import logrank_test
 from lifelines import CoxPHFitter
 
 
-data = pd.read_csv("data_2.csv")
+data = pd.read_csv("data.csv")
 
 High = data.query("Type == 3")
 Medium = data.query("Type == 2")

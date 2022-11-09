@@ -9,7 +9,7 @@ from sksurv.ensemble import RandomSurvivalForest
 
 set_config(display="text")
 
-Xt = pd.read_csv("data_2.csv")
+Xt = pd.read_csv("data.csv")
 y = []
 
 for i,j in zip(Xt['Machine failure'],Xt['Tool wear [min]']):
