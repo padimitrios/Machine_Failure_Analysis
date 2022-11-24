@@ -34,15 +34,15 @@ pipeline = Pipeline(steps=[('s',rfe),('m',model)])
 
 # evaluate model
 cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
-n_scores = cross_val_score(pipeline, X, y, scoring='accuracy', cv=cv, n_jobs=-1, error_score='raise')
+n_scores = cross_val_score(pipeline, Xt, y, scoring='accuracy', cv=cv, n_jobs=-1, error_score='raise')
 # report performance
 print('Accuracy: %.3f (%.3f)' % (mean(n_scores), std(n_scores)))
 
 # define RFE
 rfe = RFE(estimator=DecisionTreeClassifier(), n_features_to_select=2)
 # fit RFE
-rfe.fit(X, y)
+rfe.fit(Xt, y)
 # summarize all features
-for i in range(X.shape[1]):
+for i in range(Xt.shape[1]):
 	print('Column: %d, Selected %s, Rank: %.3f' % (i, rfe.support_[i], rfe.ranking_[i]))
 
